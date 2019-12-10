@@ -122,20 +122,25 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # panel
-bar {
-        font pango:monospace 8, FontAwesome 8
-        colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
-
+#bar {
+#        font pango:monospace 8, FontAwesome 8
+#        colors {
+#        background #2f343f
+#        statusline #2f343f
+#        separator #4b5262
+#
         # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
-    }
-        status_command i3status
+#        focused_workspace       #2f343f #bf616a #d8dee8
+#        active_workspace        #2f343f #2f343f #d8dee8
+#        inactive_workspace      #2f343f #2f343f #d8dee8
+#        urgent_workspacei       #2f343f #ebcb8b #2f343f
+#    }
+#        status_command i3status
+#}
+
+bar {
+  position top
+  status_command i3blocks
 }
 
 # window rules, you can find the window class using xprop
@@ -161,8 +166,14 @@ client.background           #2f343f
 # Screen Shots
 bindsym Control+Print exec gnome-screenshot -i
 
+
+# Configurações de teclas adicionais
+# Desabilita o I3
 mode "pass-through" {
     bindsym $super+Control+t mode "default"
 }
 
 bindsym $super+Control+t mode "pass-through"
+
+#Move workspace de um monitor para o outro
+bindsym $super+p move workspace to output right

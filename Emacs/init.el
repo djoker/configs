@@ -48,7 +48,7 @@
  '(elpy-rpc-python-command "python3")
  '(package-selected-packages
    (quote
-    (pipenv all-the-icons helm-gitlab helm-pydoc ## neotree material-theme better-defaults)))
+    (docker-compose-mode dockerfile-mode pipenv all-the-icons helm-gitlab helm-pydoc ## neotree material-theme better-defaults)))
  '(python-shell-interpreter "python3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -123,3 +123,6 @@
 (setq org-capture-templates
       '(( "t" "todo" entry (file+headline "~/emacs.d/mmtodo.org" "Tasks")
 	  "* TODO [#A] %?")))
+
+;; Limpa espaços no final das linhas
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
